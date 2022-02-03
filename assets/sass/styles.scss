@@ -1,0 +1,172 @@
+$primary: #0C0C0C;
+$secondary: #F4F6F6;
+$shadow-color: #66676D;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $secondary;
+  color: $primary;
+}
+
+ul {
+  padding-right: 2em;
+}
+
+nav {
+  background-color: $primary;
+  color: $secondary;
+  width:100%;
+  box-shadow: 0 20px 20px $shadow-color;
+  position: fixed;
+  z-index: 2;
+
+  .home {
+    border-bottom: 1px solid darken($secondary, 30%);
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    a {
+      color: $secondary;
+      text-decoration: none;
+    }
+  }
+
+  ul {
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      &:link,
+      &:visited {
+        color: darken($secondary, 30%);
+      }
+      &:link:hover,
+      &:visited:hover {
+        color: $secondary;
+      }
+    }
+  }
+
+}
+
+.content {
+  text-align: center;
+}
+
+.item-home {
+  padding: 250px 0 250px 0;
+}
+
+.item {
+  padding: 200px 0 150px 0;
+}
+
+.box {
+  margin: 30px;
+}
+
+.avatar {
+   width: 150px;
+   border-radius: 80px;
+   box-shadow: 0 15px 50px $shadow-color;
+}
+.description {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.location-info {
+  font-size: 15px;
+  font-weight: bold
+}
+
+
+.description-about {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align:justify;
+  li {
+    list-style: none;
+    text-align: center;
+  }
+}
+
+
+footer {
+  background-color: $primary;
+  color: $secondary;
+  padding: 10px;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    &:link,
+    &:visited {
+      color: darken($secondary, 20%);
+    }
+    &:link:hover,
+    &:visited:hover {
+      color: $secondary;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 5px;
+
+    li {
+      list-style: none;
+      margin: 4px;
+    }
+  }
+  .bi {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.description-footer {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px;
+  color: darken($secondary, 40%)
+}
+
+.carousel-indicators {
+  z-index: 1;
+}
+
+@media screen and (max-width: 599px) {
+  .container-lg {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .box-aside {
+    display: flex;
+    justify-content: space-around;
+    .box {
+      margin: 10px;
+      width: 200px;
+    }
+  }
+}
