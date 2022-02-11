@@ -1,0 +1,72 @@
+$primary: #0C0C0C;
+$secondary: #F4F6F6;
+$shadow-color: #66676D;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lighten($primary, 80%);
+    color: $primary;
+}
+
+form {
+    margin: 20px 40px;
+    background-color: $secondary;
+    border: 1px solid $primary;
+    box-shadow: 0px 20px 120px $shadow-color;
+}
+
+div {
+    padding: 40px 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid darken($secondary, 30%);
+    
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    input {
+        background-color: $secondary;
+        border: none;
+        border-bottom: 1px solid $primary;
+        width: 80%;
+        padding: 5px 0;
+        outline: none;
+    }
+}
+
+textarea {
+    background-color: $secondary;
+    border: none;
+    border-bottom: 1px solid $primary;
+    width: 80%;
+    margin-top: 4px;
+    padding: 5px 0;
+    resize: none;
+    outline: none;
+}
+
+.send {
+    border-radius: 8px;
+    background-color: $primary;
+    color: $secondary;
+    width: 40%;
+    padding: 10px;
+    display: block;
+    margin: 30px auto;
+    &:active {
+        background-color: lighten($primary, 10%);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    form {
+        margin: 60px auto;
+        width: 50%;
+    }
+}
