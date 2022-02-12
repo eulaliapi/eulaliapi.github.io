@@ -11,6 +11,7 @@ $shadow-color: #66676D;
 body {
     background-color: lighten($primary, 80%);
     color: $primary;
+    font-weight: bold;
 }
 
 form {
@@ -59,6 +60,8 @@ textarea {
     padding: 10px;
     display: block;
     margin: 30px auto;
+    font-family: 'Open Sans';
+    font-weight: bold;
     &:active {
         background-color: lighten($primary, 10%);
     }
