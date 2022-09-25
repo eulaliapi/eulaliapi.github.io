@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-yellow: #FFCD38;
+    --primary-black: #111827;
+    --primary-light: #94a3b8;
+}
+
+.active-btn {
+    color: var(--primary-yellow);
+    border-color: var(--primary-yellow);
+}
+
+.active-name {
+    text-decoration: underline;
+    text-decoration-color: var(--primary-yellow);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 6px;
+}
+
+.active-name:hover {
+    text-decoration: none;
+}
+
+.name {
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+
+.name::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-black);
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.name.dark:after {
+    background-color: var(--primary-light);
+}
+
+.name:hover::after {
+    transform: scale(1);
+}
+
+.active-bar {
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-yellow);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 6px;
+}
+
+.navRef:hover {
+    font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+
+    .active-bar:hover {
+        text-decoration: none;
+    }
+
+    .navRef {
+        display: block;
+        position: relative;
+        padding: 0.2em 0;
+    }
+    
+    .navRef::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: var(--primary-black);
+      opacity: 1;
+      transform: scale(0);
+      transform-origin: center;
+      transition: opacity 300ms, transform 300ms;
+    }
+
+    .navRef.dark:after {
+        background-color: var(--primary-light);
+    }
+    
+    .navRef:hover::after {
+        transform: scale(1);
+    }
+}

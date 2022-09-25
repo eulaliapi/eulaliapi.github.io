@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <title>Eulalia Pirone | Contact Form</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('user_cuPRfSwKORsVHMa9OdhOz');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function () {
+                        alert('Your message has been sent successfully.');
+                        document.getElementById('name_input').value = '';
+                        document.getElementById('mail_input').value = '';
+                        document.getElementById('msg_input').value = '';
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+
+    </script>
+</head>
+
+<body class="bg-stone-50 dark:bg-slate-800">
+
+    <!--dark/light mode btn-->
+    <div class="m-2">
+        <button class="border rounded px-2 py-1 text-slate-300" id="moon">
+            <i class="fa-solid fa-moon text-lg"></i>
+        </button>
+    </div>
+    <!--image-->
+    <div class="m-2">
+        <img src="./img/pixelart_propic.png" class="mx-auto border-4 my-4 border-slate-900 rounded-full w-24 h-24">
+    </div>
+    <!--form-->
+    <div class="mx-2">
+        <form class="flex flex-col max-w-sm border rounded-lg shadow-lg mx-auto" id="contact-form">
+
+            <input type="hidden" name="contact_number">
+
+            <label class="my-2 mx-2 font-semibold text-slate-800 dark:text-white">Name</label>
+            <input
+                class="input border rounded-lg my-1 mx-2 p-2 text-slate-400 focus:outline-none focus:ring focus:ring-amber-400"
+                id="name_input" type="text" name="user_name" required>
+
+            <label class="my-2 mx-2 font-semibold text-slate-800 dark:text-white">Email</label>
+            <input
+                class="input border rounded-lg my-1 mx-2 p-2 text-slate-400 focus:outline-none focus:ring focus:ring-amber-400"
+                id="mail_input" type="email" name="user_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+
+
+            <label class="my-2 mx-2 font-semibold text-slate-800 dark:text-white">Message</label>
+            <textarea
+                class="input border rounded-lg my-1 mx-2 p-2 text-slate-400 focus:outline-none focus:ring focus:ring-amber-400"
+                id="msg_input" name="message" required></textarea>
+
+
+            <input
+                class="cursor-pointer my-4 mx-8 rounded-lg py-2 bg-slate-800 font-semibold text-white hover:bg-slate-600 dark:text-slate-800 dark:bg-white dark:hover:bg-slate-600"
+                type="submit" value="Send">
+
+        </form>
+    </div>
+
+    <div class="mt-8 mx-4">
+        <a class="underline decoration-amber-400 decoration-4 hover:text-amber-400 font-semibold dark:text-slate-400 dark:hover:text-amber-400"
+            href="./index.html">Go
+            Back</a>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
