@@ -1,9 +1,5 @@
 $(document).ready(function () {
 
-    const homeTop = $('#home').offset().top;
-    const skillsTop = $('#skills').offset().top;
-    const projectsTop = $('#projects').offset().top;
-
     //toggles navbar w < 768px
     $('#button').click(function () {
         $('#navbar').toggleClass('hidden')
