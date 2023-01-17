@@ -1,7 +1,7 @@
 # Portfolio
 
-This [portfolio](https://eulaliapi.github.io/) shows my best projects so far + gives you a glimpse of myself.
+Visit my [portfolio](https://eulaliapi.github.io/) to know more about me :smile:.
 
 ## Contacts 
-
-If you like it and you want to work with me, please contact me via [Linkedin](https://www.linkedin.com/in/eulalia-pirone/) or send me an [email](https://eulaliapi.github.io/contact-form.html)!
+- [LinkedIn](https://www.linkedin.com/in/eulalia-pirone/)
+- [Email](https://eulaliapi.github.io/contact-form.html)
