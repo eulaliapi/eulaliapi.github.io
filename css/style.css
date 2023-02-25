@@ -798,16 +798,12 @@ video {
   width: 3.5rem;
 }
 
-.w-80 {
-  width: 20rem;
+.w-20 {
+  width: 5rem;
 }
 
 .w-16 {
   width: 4rem;
-}
-
-.w-20 {
-  width: 5rem;
 }
 
 .w-24 {
@@ -1236,6 +1232,10 @@ video {
     top: 270px;
   }
 
+  .md\:top-0 {
+    top: 0px;
+  }
+
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -1267,6 +1267,11 @@ video {
   .md\:my-10 {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
+  }
+
+  .md\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .md\:block {
