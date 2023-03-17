@@ -8,10 +8,9 @@ $(document).ready(function () {
                 $('#skills-nav').removeClass('skills');
                 $('#works-nav').removeClass('works');
                 $('#contact-nav').removeClass('contact');
-                $('#skills').fadeOut();
-                $('#works').fadeOut();
-                $('#contact').fadeOut();
-                $('#about').fadeIn(1000);
+                $('#skills').fadeOut(() =>  $('#about').delay(1000).fadeIn());
+                $('#works').fadeOut(() =>  $('#about').delay(1000).fadeIn());
+                $('#contact').fadeOut(() =>  $('#about').delay(1000).fadeIn());
                 
             break;
             case 'skills-nav':
@@ -19,35 +18,36 @@ $(document).ready(function () {
                 $('#skills-nav').addClass('skills');
                 $('#works-nav').removeClass('works');
                 $('#contact-nav').removeClass('contact');
-                $('#about').fadeOut();
-                $('#works').fadeOut();
-                $('#contact').fadeOut();
-                $('#skills').fadeIn(1000);
+                $('#about').fadeOut(() =>  $('#skills').delay(1000).fadeIn());
+                $('#works').fadeOut(() =>  $('#skills').delay(1000).fadeIn());
+                $('#contact').fadeOut(() =>  $('#skills').delay(1000).fadeIn());
+            
             break;
             case 'works-nav':
                 $('#about-nav').removeClass('about');
                 $('#skills-nav').removeClass('skills');
                 $('#works-nav').addClass('works');
                 $('#contact-nav').removeClass('contact');
-                $('#about').fadeOut();
-                $('#skills').fadeOut();
-                $('#contact').fadeOut();
-                $('#works').fadeIn(1000);
+                $('#about').fadeOut(() =>  $('#works').delay(1000).fadeIn());
+                $('#skills').fadeOut(() =>  $('#works').delay(1000).fadeIn());
+                $('#contact').fadeOut(() =>  $('#works').delay(1000).fadeIn());
+
             break;
             case 'contact-nav':
                 $('#about-nav').removeClass('about');
                 $('#skills-nav').removeClass('skills');
                 $('#works-nav').removeClass('works');
                 $('#contact-nav').addClass('contact');
-                $('#about').fadeOut();
-                $('#skills').fadeOut();
-                $('#works').fadeOut();
-                $('#contact').fadeIn(1000);
+                $('#about').fadeOut(() =>  $('#contact').delay(1000).fadeIn());
+                $('#skills').fadeOut(() =>  $('#contact').delay(1000).fadeIn());
+                $('#works').fadeOut(() =>  $('#contact').delay(1000).fadeIn());
+            
             break;
         }
 
     });
 
+    //change language
     $('#lang').click((event) => {
         
         switch(event.currentTarget.innerText) {
@@ -91,6 +91,7 @@ $(document).ready(function () {
         }
     })
 
+    //show project details
     $('.list').click((event) => {
 
         $('.list').not(event.currentTarget).fadeToggle();
